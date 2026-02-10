@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>藤井鉄玄 | 構造設計・業務設計・プロジェクト横断ディレクション</title>
+  <meta name="description" content="藤井鉄玄のポートフォリオ。構造設計・業務設計・プロジェクト横断ディレクションの実務家。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-main: #1A1A2E;
+      --color-accent: #16213E;
+      --color-text: #E0E0E0;
+      --color-heading: #FFFFFF;
+      --color-highlight: #0F3460;
+      --color-teal: #53A8B6;
+      --color-bg: #0F0F1A;
+      --color-border: #222;
+      --font-ja: 'Noto Sans JP', sans-serif;
+      --font-en: 'Inter', sans-serif;
+      --max-width: 900px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-ja);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.8;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    /* ===== Typography ===== */
+    h1, h2, h3 {
+      color: var(--color-heading);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      border-left: 4px solid var(--color-teal);
+      padding-left: 16px;
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--color-teal);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.75;
+    }
+
+    .en {
+      font-family: var(--font-en);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--color-teal);
+      object-fit: cover;
+      display: block;
+      background-color: var(--color-main);
+    }
+
+    .hero-text h1 {
+      font-size: 2rem;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .hero-text h1 .name-en {
+      font-family: var(--font-en);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--color-text);
+      margin-left: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--color-teal);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .hero-catch {
+      font-size: 0.92rem;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    /* ===== Capability List ===== */
+    .capability-item {
+      margin-bottom: 28px;
+    }
+
+    .capability-item h3 {
+      font-size: 1rem;
+      color: var(--color-heading);
+      margin-bottom: 6px;
+    }
+
+    .capability-item h3 .num {
+      color: var(--color-teal);
+      font-family: var(--font-en);
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .capability-item p {
+      font-size: 0.92rem;
+      color: var(--color-text);
+      padding-left: 2px;
+    }
+
+    /* ===== Style List ===== */
+    .style-list {
+      list-style: none;
+    }
+
+    .style-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 14px;
+      font-size: 0.93rem;
+      line-height: 1.7;
+    }
+
+    .style-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 2px;
+      background-color: var(--color-teal);
+    }
+
+    /* ===== Project Cards ===== */
+    .project-card {
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+      background-color: rgba(26, 26, 46, 0.3);
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: #333;
+    }
+
+    .project-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .project-card h3 .marker {
+      color: var(--color-teal);
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      background-color: var(--color-highlight);
+      color: var(--color-text);
+      border-radius: 4px;
+      padding: 2px 10px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      word-break: auto-phrase;
+      overflow-wrap: break-word;
+    }
+
+    .project-details {
+      list-style: none;
+    }
+
+    .project-details li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #bbb;
+    }
+
+    .project-details li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 5px;
+      height: 1px;
+      background-color: #555;
+    }
+
+    /* ===== Tool Tags ===== */
+    .tool-category {
+      margin-bottom: 18px;
+    }
+
+    .tool-category-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: var(--color-main);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      font-family: var(--font-en);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== Experience Timeline ===== */
+    .timeline-item {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 2px;
+      background-color: var(--color-teal);
+    }
+
+    .timeline-year {
+      font-family: var(--font-en);
+      font-weight: 700;
+      color: var(--color-teal);
+      font-size: 0.85rem;
+    }
+
+    /* ===== Contact ===== */
+    .contact-section {
+      border-top: 1px solid var(--color-border);
+      padding: 48px 0 80px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .contact-name {
+      font-size: 1rem;
+      color: var(--color-heading);
+      margin-bottom: 8px;
+    }
+
+    .contact-email {
+      font-family: var(--font-en);
+      font-size: 0.95rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.75rem;
+      color: #555;
+      font-family: var(--font-en);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 640px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero-text h1 .name-en {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+
+      .hero-catch {
+        font-size: 0.85rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .hero {
+        padding: 48px 0 40px;
+      }
+
+      .project-card {
+        padding: 18px;
+      }
+
+      .project-card h3 {
+        font-size: 0.98rem;
+        line-height: 1.5;
+      }
+
+      .badge-row {
+        gap: 6px;
+      }
+
+      .badge {
+        font-size: 0.78rem;
+        padding: 2px 8px;
+      }
+
+      .project-details li {
+        font-size: 0.84rem;
+      }
+
+      .tag {
+        font-size: 0.78rem;
+        padding: 3px 10px;
+      }
+
+      .timeline-item {
+        font-size: 0.87rem;
+      }
+
+      .capability-item p {
+        font-size: 0.87rem;
+      }
+
+      .style-list li {
+        font-size: 0.87rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 900px) {
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* ===== Print ===== */
+    @media print {
+      body {
+        background-color: #fff;
+        color: #222;
+        font-size: 12px;
+      }
+
+      h1, h2, h3 {
+        color: #000;
+      }
+
+      .hero-subtitle,
+      .capability-item h3 .num,
+      .timeline-year {
+        color: #333;
+      }
+
+      .hero-photo img {
+        border-color: #999;
+      }
+
+      .badge {
+        background-color: #eee;
+        color: #333;
+      }
+
+      .tag {
+        background-color: #f5f5f5;
+        border-color: #ccc;
+        color: #333;
+      }
+
+      .project-card {
+        border-color: #ccc;
+        background-color: transparent;
+      }
+
+      .style-list li::before,
+      .timeline-item::before {
+        background-color: #666;
+      }
+
+      h2 {
+        border-left-color: #666;
+      }
+
+      .project-details li {
+        color: #444;
+      }
+
+      a {
+        color: #333;
+      }
+
+      .contact-section {
+        border-top-color: #ccc;
+      }
+
+      section {
+        padding: 30px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Hero Section ===== -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-photo">
+          <!-- ※ここに写真ファイルを配置：photo.jpg を同じディレクトリに置いてください -->
+          <img src="photo.png" alt="藤井鉄玄">
+        </div>
+        <div class="hero-text">
+          <h1>藤井鉄玄<span class="name-en en">Fujii Tetsunori</span></h1>
+          <p class="hero-subtitle">構造設計・業務設計・プロジェクト横断ディレクション</p>
+          <p class="hero-catch">──「人が動けない原因」を整理し、現場を回す実務家</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== できること ===== -->
+  <section>
+    <div class="container">
+      <h2>できること</h2>
+
+      <div class="capability-item">
+        <h3><span class="num en">01</span>業務の型化・仕組み化</h3>
+        <p>提案資料、スクリプト、FAQ、管理DB、ワークフローを一式で納品。「やり方」ではなく「そのまま使える完成品」を渡す。</p>
+      </div>
+
+      <div class="capability-item">
+        <h3><span class="num en">02</span>プロジェクトの構造設計</h3>
+        <p>ゴールから逆算し、情報・順番・導線を整理。関係者が迷わず動ける骨格を作る。</p>
+      </div>
+
+      <div class="capability-item">
+        <h3><span class="num en">03</span>コミュニティ・チーム間の橋渡し</h3>
+        <p>複数プロジェクトやコミュニティを横断し、情報と人を適切につなぐ。前線が動きやすくなる後方設計を担当。</p>
+      </div>
+
+      <div class="capability-item">
+        <h3><span class="num en">04</span>AI活用による業務構造化</h3>
+        <p>既存業務のヒアリングから、AI（ChatGPT / Claude等）＋Notion＋Make等を組み合わせた自動化・効率化の設計と実装。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 関わり方のスタイル ===== -->
+  <section>
+    <div class="container">
+      <h2>関わり方のスタイル</h2>
+      <ul class="style-list">
+        <li>短期利益より因果の順番を重視する</li>
+        <li>構造的に成立するかを先に確認し、その上で実装まで作る</li>
+        <li>判断材料を提供する。結論を押し付けない</li>
+        <li>前線（営業・登壇・交渉）と後方（設計・資料・DB）の役割を明確に分けて動く</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== プロジェクト実績 ===== -->
+  <section>
+    <div class="container">
+      <h2>プロジェクト実績</h2>
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3><span class="marker en">▶</span>障害×エンタメ コミュニティ事業</h3>
+        <div class="badge-row">
+          <span class="badge">役割：構造設計・後方支援</span>
+          <span class="badge">関与：企画初期〜実装・運用</span>
+        </div>
+        <div class="badge-row" style="margin-bottom: 18px;">
+          <span class="badge">成果物：スポンサー提案資料一式</span>
+          <span class="badge">コミュニティ導線設計</span>
+          <span class="badge">パートナー管理DB</span>
+          <span class="badge">YouTube運用コンセプト</span>
+          <span class="badge">グローバル向け英語資料</span>
+        </div>
+        <ul class="project-details">
+          <li>コアチーム3名体制の中で、構造設計・資料作成・パートナー管理を担当</li>
+          <li>スポンサー向け提案資料（Q&amp;A・年間予算・スケール設計）の一式を設計・作成</li>
+          <li>コミュニティ導線設計（表→入口→奥の三層分離構造）</li>
+          <li>YouTube運用コンセプト設計（情報媒体としての継続性重視）</li>
+          <li>Notion Master DBによるパートナー管理ダッシュボード構築</li>
+          <li>グローバル向けパートナーシップ資料（英語）の構成・設計</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3><span class="marker en">▶</span>試食販売業務のAI自動化支援</h3>
+        <div class="badge-row">
+          <span class="badge">役割：コンサル・実装</span>
+          <span class="badge">関与：ヒアリング〜Bot構築・法人導入設計</span>
+        </div>
+        <div class="badge-row" style="margin-bottom: 18px;">
+          <span class="badge">成果物：業務課題の構造化資料</span>
+          <span class="badge">ChatGPT Bot</span>
+          <span class="badge">法人プラン導入提案</span>
+        </div>
+        <ul class="project-details">
+          <li>クライアントの既存業務（CSV→手動整形→LINE配信）をヒアリングし、課題を構造化</li>
+          <li>ChatGPT Botを構築し、CSVアップロード→お仕事情報テンプレートの自動生成を実装</li>
+          <li>ChatGPT Teamプランの法人導入提案・段階的運用設計</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3><span class="marker en">▶</span>ASEAN情報配信</h3>
+        <div class="badge-row">
+          <span class="badge">役割：企画・構成・ディレクション</span>
+          <span class="badge">関与：コンセプト設計〜台本作成・運用</span>
+        </div>
+        <div class="badge-row" style="margin-bottom: 18px;">
+          <span class="badge">成果物：設計思想ドキュメント</span>
+          <span class="badge">配信台本</span>
+          <span class="badge">番組構成設計</span>
+        </div>
+        <ul class="project-details">
+          <li>ASEAN地域のニュースを構造的に解説するライブ配信の設計思想を策定</li>
+          <li>配信台本の構成設計（トピック選定→構造的な繋ぎ→進行フロー）</li>
+          <li>2部構成（マクロ視点のキャッチアップ＋個人のストーリー）の番組設計</li>
+        </ul>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <h3><span class="marker en">▶</span>外国人向け住宅ローン案件</h3>
+        <div class="badge-row">
+          <span class="badge">役割：LP設計・進行管理</span>
+          <span class="badge">関与：構成設計〜外注管理・A/Bテスト設計</span>
+        </div>
+        <div class="badge-row" style="margin-bottom: 18px;">
+          <span class="badge">成果物：LP構成設計書</span>
+          <span class="badge">A/Bバリアント設計</span>
+          <span class="badge">SNS運用計画</span>
+          <span class="badge">進行管理フロー</span>
+        </div>
+        <ul class="project-details">
+          <li>LP構成設計（セクション・コピー・CTA設計）からA/Bテスト用バリアント設計まで担当</li>
+          <li>SNSアカウント運用計画の策定</li>
+          <li>WordPress実装の外注管理＋構成・コピー・進行管理</li>
+        </ul>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card">
+        <h3><span class="marker en">▶</span>東南アジア向け技術輸出案件</h3>
+        <div class="badge-row">
+          <span class="badge">役割：情報整理・提案設計</span>
+          <span class="badge">関与：事前調査〜協業提案資料作成</span>
+        </div>
+        <div class="badge-row" style="margin-bottom: 18px;">
+          <span class="badge">成果物：協業提案資料</span>
+          <span class="badge">事前ミーティング設計</span>
+          <span class="badge">質問リスト</span>
+        </div>
+        <ul class="project-details">
+          <li>日本の技術をフィリピン・インドネシアへ展開する協業提案資料の作成</li>
+          <li>関係者間の事前ミーティング設計と質問リストの構造化</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 使用ツール・技術スタック ===== -->
+  <section>
+    <div class="container">
+      <h2>使用ツール・技術スタック</h2>
+
+      <div class="tool-category">
+        <div class="tool-category-label">ナレッジ・DB管理</div>
+        <div class="tag-group">
+          <span class="tag">Notion</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">AI活用</div>
+        <div class="tag-group">
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Perplexity</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">自動化</div>
+        <div class="tag-group">
+          <span class="tag">Make</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">配信</div>
+        <div class="tag-group">
+          <span class="tag">OBS</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">プレゼン</div>
+        <div class="tag-group">
+          <span class="tag">Figma</span>
+          <span class="tag">Google Slides</span>
+          <span class="tag">Keynote</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">CRM・導線</div>
+        <div class="tag-group">
+          <span class="tag">LINE公式</span>
+          <span class="tag">Googleフォーム</span>
+          <span class="tag">Tally</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">開発補助</div>
+        <div class="tag-group">
+          <span class="tag">Cursor</span>
+          <span class="tag">Claude Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 海外経験・多文化対応 ===== -->
+  <section>
+    <div class="container">
+      <h2>海外経験・多文化対応</h2>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2015〜</span> シンガポール移住。現地で法人設立、貿易・ビジネス開発に従事
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2019〜</span> フィリピン移住。オンライン教育、メディア運営
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2020〜</span> 日本帰国後、ASEAN地域との接点を維持しながら日本国内で活動
+      </div>
+      <div class="timeline-item">
+        20カ国以上の国籍の人との実務経験あり
+      </div>
+      <div class="timeline-item">
+        英語での資料作成・コミュニケーション対応可
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 連絡先 ===== -->
+  <section class="contact-section">
+    <div class="container">
+      <h2>連絡先</h2>
+      <p class="contact-name">藤井鉄玄<span class="en" style="font-weight: 400; font-size: 0.9rem; color: var(--color-text); margin-left: 8px;">Fujii Tetsunori</span></p>
+      <p class="contact-email"><a href="mailto:nltrust3033@gmail.com" class="en">nltrust3033@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      &copy; 2025 Fujii Tetsunori
+    </div>
+  </footer>
+
+</body>
+</html>
