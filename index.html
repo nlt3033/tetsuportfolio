@@ -147,6 +147,29 @@
       line-height: 1.6;
     }
 
+    .hero-callout {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(83, 168, 182, 0.25);
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(15, 52, 96, 0.7), rgba(22, 33, 62, 0.6));
+    }
+
+    .hero-callout-title {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--color-teal);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .hero-callout p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
     /* ===== Capability List ===== */
     .capability-item {
       margin-bottom: 28px;
@@ -342,6 +365,28 @@
       font-size: 0.95rem;
     }
 
+    .contact-cta {
+      max-width: 620px;
+      margin: 0 auto 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      background-color: rgba(26, 26, 46, 0.35);
+      text-align: left;
+    }
+
+    .contact-cta-title {
+      color: var(--color-heading);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-cta p {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
     /* ===== Footer ===== */
     footer {
       text-align: center;
@@ -517,7 +562,11 @@
         <div class="hero-text">
           <h1>藤井鉄玄<span class="name-en en">Fujii Tetsunori</span></h1>
           <p class="hero-subtitle">構造設計・業務設計・プロジェクト横断ディレクション</p>
-          <p class="hero-catch">──「人が動けない原因」を整理し、現場を回す実務家</p>
+          <p class="hero-catch">── Notion×AIで「人依存の業務」を型にして、現場が回る状態を作る</p>
+          <div class="hero-callout">
+            <span class="hero-callout-title">第1原理：AIは人間OS（問い・判断・文脈）を増幅するレバレッジ</span>
+            <p>AIは魔法の自動化装置ではなく、組織側のOSを増幅するレバレッジ。だから私は、ツール導入の前に「ゴール→情報→順番→導線」を整え、事故らない業務構造に落とします。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -529,23 +578,17 @@
       <h2>できること</h2>
 
       <div class="capability-item">
-        <h3><span class="num en">01</span>業務の型化・仕組み化</h3>
-        <p>提案資料、スクリプト、FAQ、管理DB、ワークフローを一式で納品。「やり方」ではなく「そのまま使える完成品」を渡す。</p>
+        <h3><span class="num en">01</span>Notion×AI導入支援（B2B）</h3>
+        <p>業務の棚卸し → 手順化 → Notion DB化 → 運用ルール化</p>
+        <p>ChatGPT/Claude等を「現場の型」に落として再現性を作る</p>
+        <p>Make/Zapier等で転記・整形・通知を自動化（事故率を下げる）</p>
       </div>
 
       <div class="capability-item">
-        <h3><span class="num en">02</span>プロジェクトの構造設計</h3>
-        <p>ゴールから逆算し、情報・順番・導線を整理。関係者が迷わず動ける骨格を作る。</p>
-      </div>
-
-      <div class="capability-item">
-        <h3><span class="num en">03</span>コミュニティ・チーム間の橋渡し</h3>
-        <p>複数プロジェクトやコミュニティを横断し、情報と人を適切につなぐ。前線が動きやすくなる後方設計を担当。</p>
-      </div>
-
-      <div class="capability-item">
-        <h3><span class="num en">04</span>AI活用による業務構造化</h3>
-        <p>既存業務のヒアリングから、AI（ChatGPT / Claude等）＋Notion＋Make等を組み合わせた自動化・効率化の設計と実装。</p>
+        <h3><span class="num en">02</span>プロジェクト横断ディレクション（構造設計）</h3>
+        <p>ゴールから逆算し、情報・論点・意思決定の順番を整える</p>
+        <p>関係者が迷わず動ける“骨格（資料/スコープ/進行）”を作る</p>
+        <p>前線（営業/交渉）と後方（設計/資料/DB）を分けて推進する</p>
       </div>
     </div>
   </section>
@@ -594,20 +637,21 @@
 
       <!-- Project 2 -->
       <div class="project-card">
-        <h3><span class="marker en">▶</span>試食販売業務のAI自動化支援</h3>
+        <h3><span class="marker en">▶</span>現場稼働型オペレーションの納品フロー改善</h3>
         <div class="badge-row">
-          <span class="badge">役割：コンサル・実装</span>
-          <span class="badge">関与：ヒアリング〜Bot構築・法人導入設計</span>
+          <span class="badge">役割：業務再設計・テンプレ化</span>
+          <span class="badge">関与：現状整理〜運用定着</span>
         </div>
         <div class="badge-row" style="margin-bottom: 18px;">
-          <span class="badge">成果物：業務課題の構造化資料</span>
-          <span class="badge">ChatGPT Bot</span>
-          <span class="badge">法人プラン導入提案</span>
+          <span class="badge">成果物：Notion運用導線</span>
+          <span class="badge">成果物テンプレート</span>
+          <span class="badge">進捗可視化</span>
         </div>
         <ul class="project-details">
-          <li>クライアントの既存業務（CSV→手動整形→LINE配信）をヒアリングし、課題を構造化</li>
-          <li>ChatGPT Botを構築し、CSVアップロード→お仕事情報テンプレートの自動生成を実装</li>
-          <li>ChatGPT Teamプランの法人導入提案・段階的運用設計</li>
+          <li>現場写真の回収から提出用成果物の生成までをNotion中心に再設計・テンプレ化し、属人化していた納品フローを日次運用できる仕組みに置き換えた（週10時間以上削減／手戻り体感80%減・レンジ、直近期）。</li>
+          <li>入力：現場写真一式＋最低限の基本情報</li>
+          <li>処理：回収→確認→不足対応→提出物作成を同一導線（ステータス）に統一、テンプレ化して整形</li>
+          <li>出力：提出用成果物が所定フォーマットで出力、進捗可視化で属人確認が減少</li>
         </ul>
       </div>
 
@@ -676,59 +720,47 @@
       <h2>使用ツール・技術スタック</h2>
 
       <div class="tool-category">
-        <div class="tool-category-label">ナレッジ・DB管理</div>
-        <div class="tag-group">
-          <span class="tag">Notion</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">AI活用</div>
+        <div class="tool-category-label">Core</div>
         <div class="tag-group">
           <span class="tag">ChatGPT</span>
           <span class="tag">Claude</span>
-          <span class="tag">Gemini</span>
-          <span class="tag">Perplexity</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">自動化</div>
-        <div class="tag-group">
-          <span class="tag">Make</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">配信</div>
-        <div class="tag-group">
-          <span class="tag">OBS</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">プレゼン</div>
-        <div class="tag-group">
-          <span class="tag">Figma</span>
-          <span class="tag">Google Slides</span>
-          <span class="tag">Keynote</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">CRM・導線</div>
-        <div class="tag-group">
-          <span class="tag">LINE公式</span>
-          <span class="tag">Googleフォーム</span>
-          <span class="tag">Tally</span>
-        </div>
-      </div>
-
-      <div class="tool-category">
-        <div class="tool-category-label">開発補助</div>
-        <div class="tag-group">
-          <span class="tag">Cursor</span>
           <span class="tag">Claude Code</span>
+          <span class="tag">Codex</span>
+          <span class="tag">Notion AI</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Notion</span>
+          <span class="tag">Google Workspace</span>
+          <span class="tag">Make</span>
+          <span class="tag">Zapier</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">Dev</div>
+        <div class="tag-group">
+          <span class="tag">GitHub</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Cloudflare</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">Research</div>
+        <div class="tag-group">
+          <span class="tag">Grok</span>
+          <span class="tag">Manus</span>
+          <span class="tag">Genspark</span>
+          <span class="tag">Skywork</span>
+        </div>
+      </div>
+
+      <div class="tool-category">
+        <div class="tool-category-label">Media</div>
+        <div class="tag-group">
+          <span class="tag">ElevenLabs</span>
+          <span class="tag">Suno</span>
         </div>
       </div>
     </div>
@@ -761,6 +793,10 @@
   <section class="contact-section">
     <div class="container">
       <h2>連絡先</h2>
+      <div class="contact-cta">
+        <p class="contact-cta-title">相談の入口（最小）</p>
+        <p>「Notion×AIで業務を型化したい／プロジェクトが人依存で詰まっている」などがあれば、メールで状況を1行ください。件名は「業務の型化相談」にしてください。</p>
+      </div>
       <p class="contact-name">藤井鉄玄<span class="en" style="font-weight: 400; font-size: 0.9rem; color: var(--color-text); margin-left: 8px;">Fujii Tetsunori</span></p>
       <p class="contact-email"><a href="mailto:nltrust3033@gmail.com" class="en">nltrust3033@gmail.com</a></p>
     </div>
